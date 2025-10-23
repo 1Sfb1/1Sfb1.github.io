@@ -23,6 +23,27 @@ h1 {
   text-decoration: none;
   margin: 0 5px;
 }
+.cv-button {
+  background: #003b73;
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.cv-button:hover {
+  background: #0051a8;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
 
 .links a:hover {
   text-decoration: underline;
