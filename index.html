@@ -9,8 +9,13 @@
 
   <body>
     <header>
-      <h1>Sebastiaan F. Berlo</h1>
-      <p>BSc Artificial Intelligence – Utrecht University</p>
+      <div class="header-content">
+        <div>
+          <h1>Sebastiaan F. Berlo</h1>
+          <p>BSc Artificial Intelligence – Utrecht University</p>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
       <p class="links">
         <a href="mailto:SebastiaanBerlo03@gmail.com">Email</a> ·
         <a href="https://linkedin.com/in/sebastiaan-berlo">LinkedIn</a> ·
@@ -23,9 +28,9 @@
         <h2>About Me</h2>
         <p>
           I am a Computer Science and Artificial Intelligence student at
-          Utrecht University with a strong foundation in machine learning,
-          mathematics, and software development. My main interests include
-          optimization, explainable AI, and data-driven design.
+          Utrecht University with strong interests in machine learning,
+          explainable AI, and optimization. I enjoy building data‑driven
+          projects combining creativity and technical precision.
         </p>
       </section>
 
@@ -36,10 +41,7 @@
             <strong>BSc Artificial Intelligence (Learning & Computation)</strong>
             – Utrecht University, 2023–2026
           </li>
-          <li>
-            <strong>Minor in Mathematics</strong> – Focus on logic, statistics,
-            and linear algebra
-          </li>
+          <li><strong>Minor in Mathematics</strong> – Logic and Data Analysis</li>
         </ul>
       </section>
 
@@ -49,33 +51,33 @@
         <article>
           <h3>🧠 Customer Review Summarization</h3>
           <p>
-            Developed a Dutch NLP model that scrapes and summarizes customer
-            reviews using <em>spaCy</em> and <em>HuggingFace</em>. Deployed via
-            a <em>Gradio</em> web interface.
+            Built a Dutch NLP model combining <em>spaCy</em> and
+            <em>HuggingFace</em> to summarize scraped customer reviews through a
+            <em>Gradio</em> web interface.
           </p>
         </article>
 
         <article>
           <h3>📈 XGBoost Delay Prediction Model</h3>
           <p>
-            Built and trained a regression model predicting transport delays
-            using <em>XGBoost</em>, <em>Pandas</em> and <em>Scikit‑Learn</em>.
+            Regression model using <em>Pandas</em> and <em>XGBoost</em> to
+            forecast delays in production data.
           </p>
         </article>
 
         <article>
           <h3>🌍 PlanetGen</h3>
           <p>
-            Seed‑based random planet generator written in Python focusing on
-            procedural generation and visual pattern analysis.
+            Procedural planet generator in Python focusing on pseudo‑random
+            terrain generation and visualization.
           </p>
         </article>
 
         <article>
-          <h3>📜 Academic Paper – Explainable AI</h3>
+          <h3>📜 Explainable AI Paper</h3>
           <p>
-            “The Use of xAI to Explain Black‑Box Models”: analysis of modern
-            interpretability methods within machine learning.
+            “The Use of xAI to Explain Black Box Models” – analysis of modern
+            interpretability methods for complex ML systems.
           </p>
         </article>
       </section>
@@ -89,8 +91,8 @@
             Scikit‑Learn, Docker, Git, Linux
           </li>
           <li>
-            <strong>Soft Skills:</strong> Analytical, precise, communicative,
-            team‑oriented
+            <strong>Soft Skills:</strong> Analytical reasoning, team‑work,
+            communication, adaptability
           </li>
         </ul>
       </section>
@@ -98,8 +100,8 @@
       <section id="contact">
         <h2>Contact</h2>
         <p>
-          Interested in collaboration or research opportunities? Feel free to
-          reach out through any of the channels above.
+          Looking to collaborate or discuss AI projects? Reach out via any of
+          the channels above.
         </p>
       </section>
     </main>
@@ -107,5 +109,25 @@
     <footer>
       <p>© 2025 Sebastiaan F. Berlo · Hosted on GitHub Pages</p>
     </footer>
+
+    <script>
+      // Theme toggle logic — saves preference
+      const toggle = document.getElementById("theme-toggle");
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme === "dark") document.body.classList.add("dark");
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const newTheme = document.body.classList.contains("dark")
+          ? "dark"
+          : "light";
+        localStorage.setItem("theme", newTheme);
+        toggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
+      });
+
+      // Set correct icon on load
+      toggle.textContent =
+        document.body.classList.contains("dark") ? "☀️" : "🌙";
+    </script>
   </body>
 </html>
